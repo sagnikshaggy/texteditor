@@ -9,7 +9,7 @@ const fontSizeSpan = document.querySelector('.fontSizeSpan');
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', (e) => {
         let command = e.target.getAttribute('data');
-        if (command === 'createLink' || command === 'insertLink') {
+        if (command === 'createLink' || command === 'insertImage') {
             let url = prompt('Link: ');
             document.execCommand(command, false, url);
         } else {
@@ -17,3 +17,15 @@ for (let i = 0; i < buttons.length; i++) {
         }
     });
 }
+
+let font = '';
+let fontSize = 18;
+
+function updateFont() {
+    let selectFont = document.querySelector('#select_font');
+    font = selectFont.options[selectFont.selectedIndex].value;
+
+    content.style = 'font-family' + font + ';';
+}
+
+updateFont();
