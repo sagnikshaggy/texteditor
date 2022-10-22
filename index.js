@@ -27,5 +27,21 @@ function updateFont() {
 
     content.style = 'font-family' + font + ';';
 }
-
 updateFont();
+
+function updateFontSizeSpan() {
+    fontSizeSpan.innerHTML = '';
+    fontSizeSpan.innerHTML = fontSize + 'px';
+}
+updateFontSizeSpan();
+
+fontSizeUp.addEventListener('click', () => {
+    fontSize++;
+    content.style = 'font-size:' + fontSize + 'px;';
+    updateFontSizeSpan();
+});
+fontSizeDown.addEventListener('click', () => {
+    fontSize--;
+    content.style = 'font-size:' + fontSize + 'px;';
+    updateFontSizeSpan();
+});
